@@ -1,22 +1,22 @@
 <div align="center">
   <img src="screenshot/logo.png" width="180" alt="THLDYTV Logo" style="border-radius: 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); margin-bottom: 20px;" />
-  <h1>THLDYTV · 抖音 TV 版</h1>
+  <h1>THLDYTV · 热门短视频 TV 版</h1>
   <p><strong>📺 重塑大屏内容生态，专为 Apple TV (tvOS) 打造的沉浸式影音终端</strong></p>
   
   <p>
-    <a href="https://testflight.apple.com/join/5VdH6a3m">
+    <a href="https://testflight.apple.com/join/4VgyBs2n">
       <img src="https://img.shields.io/badge/Platform-tvOS_15.0+-lightgrey?logo=apple&style=flat-square" alt="Platform" />
     </a>
-    <a href="https://testflight.apple.com/join/5VdH6a3m">
+    <a href="https://testflight.apple.com/join/4VgyBs2n">
       <img src="https://img.shields.io/badge/Language-Swift_UI-orange?logo=swift&style=flat-square" alt="Language" />
     </a>
-    <a href="https://testflight.apple.com/join/5VdH6a3m">
+    <a href="https://testflight.apple.com/join/4VgyBs2n">
       <img src="https://img.shields.io/badge/Status-Beta_Testing-success?style=flat-square" alt="Status" />
     </a>
   </p>
 
   <p>
-    <a href="https://testflight.apple.com/join/5VdH6a3m">
+    <a href="https://testflight.apple.com/join/4VgyBs2n">
       <img src="https://img.shields.io/badge/Download_on-TestFlight-0070c9?logo=apple&style=for-the-badge" alt="TestFlight" />
     </a>
   </p>
