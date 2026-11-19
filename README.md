@@ -1,17 +1,20 @@
 <div align="center">
-  <img src="screenshot/logo.png" width="180" alt="THLDYTV Logo" style="border-radius: 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); margin-bottom: 20px;" />
-  <h1>THLDYTV · 热门短视频 TV 版</h1>
-  <p><strong>📺 重塑大屏内容生态，专为 Apple TV (tvOS) 打造的沉浸式影音终端</strong></p>
+  <img src="screenshot/logo.png" width="180" alt="THLDYTV Logo" style="border-radius: 24px; box-shadow: 0 10px 24px rgba(0,0,0,0.3); margin-bottom: 20px;" />
+  <h1>THLDYTV · 沉浸式大屏时钟与氛围终端</h1>
+  <p><strong>🕰️ 为 Apple TV (tvOS) 倾力打造的艺术时钟、自然声景白噪音与番茄专注系统</strong></p>
   
   <p>
     <a href="https://testflight.apple.com/join/4VgyBs2n">
       <img src="https://img.shields.io/badge/Platform-tvOS_15.0+-lightgrey?logo=apple&style=flat-square" alt="Platform" />
     </a>
     <a href="https://testflight.apple.com/join/4VgyBs2n">
-      <img src="https://img.shields.io/badge/Language-Swift_UI-orange?logo=swift&style=flat-square" alt="Language" />
+      <img src="https://img.shields.io/badge/Language-Swift_5.9_/_SwiftUI-orange?logo=swift&style=flat-square" alt="Language" />
     </a>
     <a href="https://testflight.apple.com/join/4VgyBs2n">
-      <img src="https://img.shields.io/badge/Status-Beta_Testing-success?style=flat-square" alt="Status" />
+      <img src="https://img.shields.io/badge/Framework-THLClockFramework-blue?style=flat-square" alt="Framework" />
+    </a>
+    <a href="https://testflight.apple.com/join/4VgyBs2n">
+      <img src="https://img.shields.io/badge/Feature-Picture_in_Picture-purple?style=flat-square" alt="Feature" />
     </a>
   </p>
 
@@ -22,96 +25,159 @@
   </p>
 </div>
 
-> **📢 注意：** 本项目目前为闭源状态，主要用作技术展示与内测体验。点击上方 TestFlight 即可获取大屏刷短视频的最佳解决方案。
+> **📢 项目说明：** 本项目核心由 **THLClockFramework** 驱动，是一套专为客厅与工作台大屏幕定制的高性能时间呈现与氛围营造系统。深度契合 Apple tvOS 原生设计规范与 Siri Remote 交互体验，将闲置电视化身为兼具实用性与艺术美感的时间中枢。
 
 ---
 
-## 🎬 零界限的动态视觉 (Demo)
+## 🌟 核心特性与设计哲学 (Features)
 
-告别漫长的加载圈。我们重构了底层拉流逻辑，在您按下遥控器的瞬间，下一个视频已经准备就绪。
-
-<div align="center">
-  <video src="screenshot/切换视频.mp4" width="85%" controls preload="metadata"></video>
-  <p><em>丝滑的遥控器上下滑动切换体验，零延迟预缓冲，指尖轻触，世界即达。</em></p>
-</div>
+### 🎨 16 款精心雕琢的艺术表盘
+针对客厅大屏远距离观赏（10-foot UI）与高对比度显示特性，内置了 16 种不同风格的独立主题视图，随时随心切换：
+* **极客控制台 (Geek Dashboard)**：工业极客风仪表盘，集成实时系统心跳、毫秒级时钟、运行指标监控与多维度动态面板。
+* **复古翻页钟 (Flip Clock)**：拟真机械翻牌质感，还原经典的翻牌落位动效，为客厅带来厚重的复古时间韵味。
+* **太阳系星轨 (Solar System)**：以天体物理轨道为灵感，行星沿公转轨道静谧运行，在 OLED 纯黑背景上呈现浩瀚星空。
+* **经典指针模拟 (Analog Clock)**：包豪斯极简指针刻度，优雅平滑的秒针扫动动效，满足永不过时的经典美学。
+* **赛博霓虹 (Cyber Neon)**：高饱和双色辉光发光字，未来感科技光效。
+* **工业点阵 (Dot Matrix)**：经典点阵发光与像素质感，沉稳工控风格。
+* **动态流光渐变 (Dynamic Gradient)**：柔和多色光晕实时流动，呼吸般的光感变化与室内氛围灯完美辉映。
+* **更多创意表盘**：排版艺术 (Typographic)、十六进制色彩 (Hex Clock)、二进制代码 (Binary Clock)、海浪呼吸 (Wave Clock)、赛博故障 (Glitch Clock)、方块矩阵 (Text Grid) 等。
 
 ---
 
-## ✨ 重新定义 TV 交互 (Features)
+### 🍃 沉浸式自然声景与白噪音系统 (Ambient Audio)
+由 `ClockAmbientAudioManager` 统一调度的全天候大屏氛围声音引擎：
+* **4 种高保真环绕声景**：
+  * **细雨淅沥 (Gentle Rain)**：窗外绵绵细雨，舒缓降噪，打造独享专注空间；
+  * **壁炉柴火 (Campfire Hearth)**：温暖木炭微爆，静谧舒适的客厅伴侣；
+  * **浩瀚海浪 (Ocean Waves)**：潮汐起伏深呼吸，助眠与冥想首选；
+  * **静心钟摆 (Zen Pendulum)**：古朴机械节拍，律动心流。
+* **系统级混音与后台播放**：深度配置 `AVAudioSession (.playback, options: [.mixWithOthers])`，支持与系统后台音频混合播放。
+* **Now Playing 与遥控联动**：完整接入 `MPNowPlayingInfoCenter` 与 `MPRemoteCommandCenter`，支持 Siri Remote 控制中心播放/暂停控制。
+* **定时休眠伴眠 (Sleep Timer)**：支持 15 / 30 / 45 / 60 分钟定时自动淡出与停止，陪伴安然入睡。
 
-🚀 **原生 TV 交互与沉浸体验**
-* **焦点引擎深度契合 (Focus Engine)**: 抛弃粗糙的移植逻辑，纯血 tvOS 开发。遥控器操作指哪打哪，每一帧焦点转移都符合直觉。
-* **Siri Remote 无缝映射**: 轻触或按压遥控器上下方向键，丝滑切换视频；左右轻扫即可精准调节播放进度。
-* **自适应画幅与毛玻璃艺术**: 针对横屏电视与竖屏视频的天然冲突，我们独创了动态“毛玻璃”背景系统，实时提取视频主色调并向两侧晕染，让竖屏内容在大屏上再无突兀的黑边。
+---
 
-⚡️ **极速秒开与双核驱动**
-* **智能预缓冲矩阵**: 在后台无感加载后续序列的视频流与元数据，把等待时间压缩到 0 毫秒。
-* **极光开场视效**: 启动 App 瞬间即刻渲染首帧视频，搭配优雅的极光渐变过渡，为您呈现真正的“所见即所得”。
-* **双核播放器无缝切换**: 面对复杂的视频防盗链和网络抖动，应用内置双播放器内核。当一个内核拉流受阻，另一个将在后台热切换，确保画面永不中断。
+### 🍅 大屏番茄工作法与心流计时 (Pomodoro Focus)
+内置遵循高效工作法的专注管理中枢 `ClockPomodoroManager`：
+* **科学心流循环**：25 分钟高能专注 (Focus) + 5 分钟轻松休息 (Break) 自动化交替节奏。
+* **大屏可视化进度**：高对比度动态圆环随时间流逝平滑填充，远距离一目了然，掌控全局进度。
+* **声景深度联动**：开启专注模式可自动联动播放舒缓雨声白噪音，迅速切入工作状态。
 
-💾 **聪明的空间管家**
-* **精细化容量控制**: 电视存储寸土寸金。我们为您提供了 500MB、1GB、2GB 或无限制等多档缓存上限策略。
-* **静默垃圾回收**: 触及缓存阈值后，系统将自动唤醒后台清理机制，像扫地机器人一样默默淘汰最旧的视频碎片。
+---
+
+### 📺 原生画中画悬浮常驻 (Picture-in-Picture)
+严格遵循 Apple 原生画中画架构规范的悬浮时钟解决方案：
+* **原生 AVPictureInPictureController 驱动**：采用 tvOS 系统级画中画引擎。
+* **跨应用无缝随行**：返回 Apple TV 主屏幕、切换至其他应用或观看影片时，时钟与番茄倒计时浮窗可在屏幕右上角持续常驻，不错过任何重要时间节点。
+
+---
+
+### 🛡️ OLED 防烧屏与大屏常亮保护
+* **防烧屏智能微位移**：表盘核心元素在静置时具备微像素周期位移机制，防止大屏电视或 OLED 屏幕长时间固定显示产生灼伤。
+* **屏幕常亮自适应**：智能激活 `UIApplication.isIdleTimerDisabled`，确保时间终端在需要时永不黑屏休眠。
+* **Siri Remote 原生焦点引擎**：左右轻扫平滑切换表盘主题，向下轻扫唤起多功能 Dock 控制台，操作直观优雅。
 
 ---
 
 ## 📸 全景图赏与功能矩阵 (Gallery)
 
-我们在设计时坚信：**电视不该只是放大的手机。** 以下是我们在大屏幕上打造的核心场景展示。
-
-### 01 / 沉浸视听与精准控制
+### 01 / 经典美学与极客数据
 <div align="center">
-  <img src="screenshot/视频播放.jpg" width="85%" style="border-radius: 12px; margin-bottom: 15px;" />
-  <p><b>沉浸式播放</b>：剔除所有干扰元素的极简播放界面，让内容本身成为客厅的焦点。</p>
+  <img src="screenshot/01_geek_dashboard_clock.png" width="48%" style="border-radius: 12px; margin-right: 2%;" />
+  <img src="screenshot/02_flip_clock.png" width="48%" style="border-radius: 12px;" />
+  <p><b>左：极客控制台</b>（系统指标与精准时钟联动） · <b>右：复古翻页钟</b>（机械翻牌落位质感）</p>
 </div>
 
+### 02 / 天文星轨与极简模拟
 <div align="center">
-  <img src="screenshot/操作控制器.jpg" width="48%" style="border-radius: 12px; margin-right: 2%;" />
-  <img src="screenshot/视频控制器.jpg" width="48%" style="border-radius: 12px;" />
-  <p><b>呼之即来的控制中心</b>：轻触即可唤出半透明的视频控制层，从点赞、收藏到画质切换与选集，全屏操控尽在掌握。</p>
+  <img src="screenshot/03_solar_system_clock.png" width="48%" style="border-radius: 12px; margin-right: 2%;" />
+  <img src="screenshot/04_analog_clock.png" width="48%" style="border-radius: 12px;" />
+  <p><b>左：太阳系星轨时钟</b>（行星运转时间映射） · <b>右：包豪斯经典指针</b>（高对比度极简走针）</p>
 </div>
 
-### 02 / 社交互动与全局探索
+### 03 / 未来霓虹与复古点阵
 <div align="center">
-  <img src="screenshot/评论回复.jpg" width="48%" style="border-radius: 12px; margin-right: 2%;" />
-  <img src="screenshot/搜索.jpg" width="48%" style="border-radius: 12px;" />
-  <p><b>大屏社交与搜索</b>：为大屏重新排版的评论区，清晰的盖楼回复；以及支持历史记录和热点追踪的高效搜索引擎。</p>
+  <img src="screenshot/05_cyber_neon_clock.png" width="48%" style="border-radius: 12px; margin-right: 2%;" />
+  <img src="screenshot/06_dot_matrix_clock.png" width="48%" style="border-radius: 12px;" />
+  <p><b>左：赛博霓虹时钟</b>（高饱和辉光管视觉） · <b>右：工业点阵显示</b>（工控经典像素风）</p>
 </div>
 
-### 03 / 你的内容宇宙
+### 04 / 动态流光渐变呼吸
 <div align="center">
-  <img src="screenshot/博主页面.jpg" width="48%" style="border-radius: 12px; margin-right: 2%;" />
-  <img src="screenshot/我的关注.jpg" width="48%" style="border-radius: 12px;" />
-  <p><b>博主作品集与关注动态</b>：不仅是刷推荐，你还能进入博主的专属主页进行深度考古，或在“我的关注”里跟进最新动态。</p>
+  <img src="screenshot/07_dynamic_gradient_clock.png" width="85%" style="border-radius: 12px; margin-bottom: 15px;" />
+  <p><b>动态渐变流光</b>：随时间缓缓流转的呼吸式色彩晕染，与客厅环境灯光相映成趣。</p>
 </div>
 
-### 04 / 跨设备桥梁与深度定制
+### 05 / 自然声景白噪音与番茄专注
 <div align="center">
-  <img src="screenshot/我的页面.jpg" width="85%" style="border-radius: 12px; margin-bottom: 15px;" />
-  <p><b>云端无缝对接</b>：手机扫码即刻登录，云端同步你的推荐算法模型、收藏库与偏好数据。</p>
+  <img src="screenshot/08_ambient_sound_modal.png" width="48%" style="border-radius: 12px; margin-right: 2%;" />
+  <img src="screenshot/09_pomodoro_focus_modal.png" width="48%" style="border-radius: 12px;" />
+  <p><b>左：自然声景白噪音选择面板</b> · <b>右：大屏番茄工作法心流计时器</b></p>
 </div>
 
+### 06 / 系统画中画常驻与全能设置
 <div align="center">
-  <img src="screenshot/设置通用.jpg" width="48%" style="border-radius: 12px; margin-right: 2%;" />
-  <img src="screenshot/设置视频控制.jpg" width="48%" style="border-radius: 12px;" />
-  <p><b>硬核设置面板</b>：支持调节极光主题、自动连播逻辑、默认画质偏好，乃至底层的播放器解码内核。</p>
-</div>
-
-### 05 / 跨时空的狂欢
-<div align="center">
-  <img src="screenshot/直播弹幕设置.jpg" width="85%" style="border-radius: 12px; margin-bottom: 15px;" />
-  <p><b>直播与弹幕引擎</b>：不只短视频，我们还带来了完美的直播间体验。自定义弹幕的透明度与速度，让客厅秒变跨时空的互动现场。</p>
+  <img src="screenshot/10_pip_floating_clock.png" width="48%" style="border-radius: 12px; margin-right: 2%;" />
+  <img src="screenshot/11_clock_settings.png" width="48%" style="border-radius: 12px;" />
+  <p><b>左：tvOS 原生画中画桌面常驻效果</b> · <b>右：时钟偏好与个性化设置中心</b></p>
 </div>
 
 ---
 
-## 🔧 进阶操作指南
+## 🏛️ 技术架构与模块规范 (Architecture)
 
-* **推荐算法激活**：初次安装时，强烈建议呼出左侧菜单进入“我的”进行 **扫码登录**。这将唤醒您的专属推荐模型，并成倍提高视频的拉流成功率。
-* **唤醒主控台**：在任意非播放极简模式下，向左轻扫或按返回键，即可滑出左侧功能侧边栏。在这里您可以随时刷新当前列表或深层清理缓存。
+`THLClockFramework` 采用严谨的分层设计模式与现代响应式编程范式（SwiftUI + Combine）：
+
+```mermaid
+flowchart TD
+    subgraph UI ["UI Layer (SwiftUI)"]
+        CMV[ClockMainView - 主容器与Dock控制台]
+        Themes[16x Clock Themes - 翻页/星轨/指针/极客/霓虹等]
+        Modals[AmbientModal / PomodoroModal / SettingsView]
+        PiPPreview[ClockPiPPreviewModalView]
+    end
+
+    subgraph Engine ["Engine Layer (Combine & Core Frameworks)"]
+        CE[ClockEngine - 秒级高精度时间驱动核心]
+        CPM[ClockPomodoroManager - 番茄工作法循环状态机]
+        CAM[ClockAmbientAudioManager - AVFoundation 白噪音与混音]
+        CPiP[ClockPiPManager - AVPictureInPictureController 浮窗集成]
+    end
+
+    subgraph System ["System Integration (tvOS)"]
+        Remote[MPRemoteCommandCenter & Siri Remote]
+        Audio[AVAudioSession Background Playback]
+        Display[OLED Pixel Shift & IdleTimer Control]
+    end
+
+    CMV --> Themes
+    CMV --> Modals
+    CMV --> PiPPreview
+
+    Themes --> CE
+    Modals --> CPM
+    Modals --> CAM
+    PiPPreview --> CPiP
+
+    CAM --> Audio
+    CAM --> Remote
+    CMV --> Display
+```
+
+* **纯本地安全运行**：本框架无任何网络请求依赖，无需后端服务器，零用户隐私数据收集。
+* **低 CPU/GPU 功耗开销**：精心调优的 SwiftUI 视图重绘层级，静态与动态元素严格解耦，长时间大屏运行保持极低能耗与设备发热。
+* **高合规性**：严格契合 Apple 《App Store 审核指南》与《tvOS 人机交互指南 (HIG)》。
 
 ---
 
-## 📝 声明 (Disclaimer)
+## 📄 隐私政策 (Privacy Policy)
 
-本项目仅作为 iOS/tvOS 平台技术交流、UI/UX 设计分析及个人兴趣之作。应用内所涉及的所有数据与视频内容均来自互联网公开接口及原始链接，本项目 **不存储、不提供、也不传播** 任何侵权的第三方内容。如给您带来任何困扰，请随时与开发者取得联系。
+本项目严格保护用户隐私，遵守苹果 App Store 隐私合规要求：
+* 纯本地工具，无外部数据采集；
+* 详细政策请查阅：[隐私政策 (Privacy Policy)](PrivacyPolicy.md)。
+
+---
+
+## 📝 许可证与声明 (Disclaimer)
+
+本项目遵循个人研究与技术展示规范。所有展示素材与交互逻辑均为原生开发技术呈现。如有任何技术问题或建议，欢迎提交 Issue。
