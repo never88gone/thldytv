@@ -128,48 +128,13 @@
 
 ---
 
-## 🏛️ 技术架构与模块规范 (Architecture)
+## 🏛️ 技术架构与设计规范 (Architecture)
 
-`THLClockFramework` 采用严谨的分层设计模式与现代响应式编程范式（SwiftUI + Combine）：
+`THLClockFramework` 采用纯原生 SwiftUI + Combine 构建，遵循清晰的关注点分离与模块化设计：
 
-```mermaid
-flowchart TD
-    subgraph UI ["UI Layer (SwiftUI)"]
-        CMV[ClockMainView - 主容器与Dock控制台]
-        Themes[16x Clock Themes - 翻页/星轨/指针/极客/霓虹等]
-        Modals[AmbientModal / PomodoroModal / SettingsView]
-        PiPPreview[ClockPiPPreviewModalView]
-    end
-
-    subgraph Engine ["Engine Layer (Combine & Core Frameworks)"]
-        CE[ClockEngine - 秒级高精度时间驱动核心]
-        CPM[ClockPomodoroManager - 番茄工作法循环状态机]
-        CAM[ClockAmbientAudioManager - AVFoundation 白噪音与混音]
-        CPiP[ClockPiPManager - AVPictureInPictureController 浮窗集成]
-    end
-
-    subgraph System ["System Integration (tvOS)"]
-        Remote[MPRemoteCommandCenter & Siri Remote]
-        Audio[AVAudioSession Background Playback]
-        Display[OLED Pixel Shift & IdleTimer Control]
-    end
-
-    CMV --> Themes
-    CMV --> Modals
-    CMV --> PiPPreview
-
-    Themes --> CE
-    Modals --> CPM
-    Modals --> CAM
-    PiPPreview --> CPiP
-
-    CAM --> Audio
-    CAM --> Remote
-    CMV --> Display
-```
-
-* **纯本地安全运行**：本框架无任何外部网络请求依赖，无需后端服务器，零用户隐私数据收集。
-* **低 CPU/GPU 功耗开销**：精心调优的 SwiftUI 视图重绘层级，静态与动态元素严格解耦，长时间大屏运行保持极低能耗与设备发热。
+* **纯本地安全运行**：无任何外部网络请求与服务器依赖，零用户隐私数据收集。
+* **低能耗优化**：精心调优的视图重绘层级，静态背景与秒级跳动元素严格解耦，长时间大屏运行保持极低 CPU/GPU 占用与设备发热。
+* **系统级原生融合**：全面适配 Apple tvOS 焦点引擎 (Focus Engine)、画中画控制器 (`AVPictureInPictureController`) 与系统音频控制中心 (`MPNowPlayingInfoCenter`)。
 * **高合规性**：严格契合 Apple 《App Store 审核指南》与《tvOS 人机交互指南 (HIG)》。
 
 ---
