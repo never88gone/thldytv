@@ -11,7 +11,7 @@
       <img src="https://img.shields.io/badge/Language-Swift_5.9_/_SwiftUI-orange?logo=swift&style=flat-square" alt="Language" />
     </a>
     <a href="https://testflight.apple.com/join/4VgyBs2n">
-      <img src="https://img.shields.io/badge/Framework-THLClockFramework-blue?style=flat-square" alt="Framework" />
+      <img src="https://img.shields.io/badge/Focus-Pomodoro_&_Ambient-blue?style=flat-square" alt="Focus" />
     </a>
     <a href="https://testflight.apple.com/join/4VgyBs2n">
       <img src="https://img.shields.io/badge/Feature-Picture_in_Picture-purple?style=flat-square" alt="Feature" />
@@ -28,7 +28,7 @@
   </p>
 </div>
 
-> **📢 项目说明：** 本项目核心由 **THLClockFramework** 驱动，是一套专为客厅与工作台大屏幕定制的高性能时间呈现与专注氛围营造系统。深度契合 Apple tvOS 原生设计规范与 Siri Remote 交互体验，将闲置电视化身为兼具实用性与艺术美感的时间中枢。
+> **📢 项目说明：** 本应用是一套专为客厅与工作台大屏幕定制的高性能时间呈现、自然声景与专注氛围系统。深度契合 Apple tvOS 原生设计规范与 Siri Remote 交互体验，将客厅电视化身为兼具实用性与艺术美感的时间氛围中枢。
 
 ---
 
@@ -66,7 +66,7 @@
 
 ---
 
-## 🌟 THLClockFramework 核心技术特性 (Features)
+## 🌟 核心功能特性 (Features)
 
 ### 🎨 16 款独立艺术表盘
 * **复古翻页时钟 (Flip Clock)**：真实落牌物理动效与拟真机械质感，还原经典的翻牌落位美学。
@@ -78,19 +78,19 @@
 * **动态流光渐变 (Dynamic Gradient)**：呼吸般柔和多色光晕流动，与室内氛围环境光相融。
 * **更多创意表盘**：复古 LCD、极简同心圆环、方块矩阵、排版艺术、十六进制色彩、二进制代码、海浪呼吸等。
 
-### 🍃 自然声景与白噪音系统 (`ClockAmbientAudioManager`)
+### 🍃 自然声景与白噪音系统
 * **4 种高保真环绕声景**：细雨淅沥 (Gentle Rain)、壁炉柴火 (Campfire Hearth)、浩瀚海浪 (Ocean Waves)、静心钟摆 (Zen Pendulum)。
 * **系统级混音与后台保活**：基于 `AVAudioSession (.playback, options: [.mixWithOthers])`，支持与系统后台音频并发混音播放。
 * **Now Playing 与遥控联动**：完整接入 `MPNowPlayingInfoCenter` 与 `MPRemoteCommandCenter`，支持 Siri Remote 控制中心播放/暂停控制。
 * **定时休眠伴眠 (Sleep Timer)**：支持 15 / 30 / 45 / 60 分钟定时自动淡出与停止。
 
-### 🍅 大屏番茄工作法 (`ClockPomodoroManager`)
+### 🍅 大屏番茄工作法
 * **科学心流循环**：25 分钟高能专注 (Focus) + 5 分钟轻松休息 (Break) 自动化交替节奏。
 * **大屏可视化进度**：高对比度动态圆环随时间平滑填充，远距离一目了然。
 * **声景深度联动**：开启专注模式可自动联动播放舒缓雨声白噪音，迅速切入专注状态。
 
-### 📺 原生画中画悬浮常驻 (`ClockPiPManager`)
-* **严格遵循 Apple tvOS 原生规范**：采用 `AVPictureInPictureController` 底层框架。
+### 📺 原生画中画悬浮常驻
+* **严格遵循 Apple tvOS 原生规范**：采用 `AVPictureInPictureController` 系统级框架。
 * **跨应用无缝随行**：返回 Apple TV 主屏幕、切换至其他应用或观看影片时，时钟与番茄倒计时浮窗可在屏幕右上角持续常驻。
 
 ### 🛡️ OLED 防烧屏与大屏常亮保护
@@ -126,11 +126,17 @@
   <p><b>左：经典复古液晶 LCD 时钟</b> · <b>右：极简同心圆环时钟</b></p>
 </div>
 
+<div align="center">
+  <img src="screenshot/clock_text_grid.png" width="48%" style="border-radius: 12px; margin-right: 2%;" />
+  <img src="screenshot/clock_geek_dashboard.png" width="48%" style="border-radius: 12px;" />
+  <p><b>左：方块矩阵字符时钟</b> · <b>右：工业极客仪表盘控制台</b></p>
+</div>
+
 ---
 
 ## 🏛️ 技术架构与设计规范 (Architecture)
 
-`THLClockFramework` 采用纯原生 SwiftUI + Combine 构建，遵循清晰的关注点分离与模块化设计：
+应用采用纯原生 SwiftUI + Combine 架构构建，遵循严格的 Apple tvOS 设计哲学与模块化标准：
 
 * **纯本地安全运行**：无任何外部网络请求与服务器依赖，零用户隐私数据收集。
 * **低能耗优化**：精心调优的视图重绘层级，静态背景与秒级跳动元素严格解耦，长时间大屏运行保持极低 CPU/GPU 占用与设备发热。
